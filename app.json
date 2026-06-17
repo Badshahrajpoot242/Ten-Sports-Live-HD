@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Ten Sports Live HD",
-    "slug": "mobile",
+    "slug": "ten-sports-live-hd",
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./assets/images/icon.png",
@@ -30,8 +30,7 @@
         "VIBRATE",
         "WAKE_LOCK",
         "POST_NOTIFICATIONS"
-      ],
-      "googleServicesFile": "./google-services.json"
+      ]
     },
     "web": {
       "favicon": "./assets/images/icon.png"
