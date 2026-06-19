@@ -19,13 +19,21 @@ jobs:
           node-version: "20"
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
+
+      - name: Debug Expo Config
+        run: npx expo config --json 2>&1 || true
 
       - name: Install EAS CLI
         run: npm install -g eas-cli
 
       - name: Build APK on EAS Cloud
         run: eas build --platform android --profile preview --non-interactive --wait
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Download APK
+        run: eas build:download --platform android --profile preview --latest --non-interactive --output ./ten-sports-live.apk
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
 
